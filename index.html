@@ -3,19 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Redirect</title>
-    <script type="text/javascript">
-        // Redirect immediately when the page loads
-         window.onload = function() {
-              window.location.href = "https://dnl-m.sbs/?utm_medium=paid&utm_source=ig&utm_id=120216668709150263&utm_content=120216668764270263&utm_term=120216668764280263&utm_campaign=120216668709150263&fbclid=PAY2xjawIiI2pleHRuA2FlbQIxMAABpgeDbN2XvDTrgHBFj4xFyRp1-Ps76ItwjpUPWL78CQeK2Q-2QzyFzzaDkA_aem_3BW0xOwJpG8c7E4ISUmlaQ"; // Change this to the link you want
-             
-           //  window.location.href = "https://t.me/visalearning"; // Change this to the link you want
-         };
+    <title>Auto</title>
+    <script>
+        // WhatsApp numbers list
+        const numbers = [
+            "+447311677396", // Replace with actual WhatsApp numbers
+            "+447882859927",
+            "+919065622826",
+            "+918530842182",
+            "+447378216323",
+            "+918447119924"
 
-       
+        ];
+
+        // Telegram channel link (no message)
+        const telegramLink = "https://t.me/visalearning"; // Replace with your Telegram channel link
+
+        // Predefined message for WhatsApp
+        const message = "Hello";
+
+        // Function to generate a random WhatsApp number or Telegram link and auto-redirect
+        function autoRedirect() {
+            // Randomly decide whether to redirect to WhatsApp or Telegram
+            const isWhatsApp = Math.random() < 0.5; // 50% chance for WhatsApp, 50% for Telegram
+
+            if (isWhatsApp) {
+                // Select a random WhatsApp number
+                const randomIndex = Math.floor(Math.random() * numbers.length);
+                const selectedNumber = numbers[randomIndex];
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappLink = `https://wa.me/${selectedNumber}?text=${encodedMessage}`;
+                
+                // Redirect to WhatsApp with the message
+                window.location.href = whatsappLink;
+            } else {
+                // Redirect to Telegram channel (no message)
+                window.location.href = telegramLink;
+            }
+        }
+
+        // Call the function on page load
+        window.onload = autoRedirect;
     </script>
 </head>
 <body>
-    <!-- No content in the body -->
+<!--     <h1>Redirecting...</h1>
+    <p>You are being redirected to WhatsApp or Telegram...</p> -->
 </body>
 </html>
+
