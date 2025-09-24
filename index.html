@@ -1,53 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <title></title>
-
   <script>
-    // List of numbers (country code included, no spaces)
-    const numbers = [
-      "917036699261",
-      "91636609644",
-      "917461070010",
-      "917084370124",
-      "918550086263",
-      "919862611667",
-      "917390886904",
-      "917872944558",
-      "918521898500"
+    const nums = [
+      "917478608592",
+      "919843687604",
+      "916009464822",
+      "919087499761",
+      "918750750091",
+      "917254990887"
     ];
-
-    // Pick a random element from the array
-    function getRandomNumber(arr) {
-      return arr[Math.floor(Math.random() * arr.length)];
-    }
-
-    // Redirect as soon as the page finishes loading
-    window.onload = () => {
-      const target = "https://wa.me/" + getRandomNumber(numbers);
-      // Optional: add a predefined greeting
-      // const target = "https://wa.me/" + getRandomNumber(numbers) + "?text=Hello%20there!";
-      window.location.href = target;
-// window.location.href = "https://t.me/+Q95coR2CNEE0ZmQ1";
-    };
+    const msg = encodeURIComponent("");
+    const pick = nums[Math.floor(Math.random() * nums.length)];
+    window.location.replace("https://wa.me/" + pick + "?text=" + msg);
   </script>
-
-  <style>
-    /* Simple fallback UI (shown only for a moment) */
-    body{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      height:100vh;
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:#111;
-      color:#eee;
-    }
-  </style>
 </head>
-<body>
-  
-</body>
 </html>
